@@ -19,3 +19,6 @@
 [submodule "bundle/latex"]
 	path = bundle/latex
 	url = https://github.com/vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
