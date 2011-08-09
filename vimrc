@@ -1,12 +1,10 @@
-filetype off
+source ~/.vim/bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 " Source the vimrc file after saving it
 if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
-
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
 
 set nocompatible
 
