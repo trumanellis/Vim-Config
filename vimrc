@@ -1,5 +1,6 @@
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
+call pathogen#helptags()
 
 " Source the vimrc file after saving it
 if has("autocmd")
@@ -69,15 +70,6 @@ command! AJ :FSSplitBelow
 set hidden
 set wildchar=<Tab> wildmenu wildmode=full
 
-" Window settings
-set winminheight=0      " Allow windows to get fully squashed
-
-"
-" Switch between windows, maximizing the current window
-"
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_ 
-
 "Vim-LaTeX Settings
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
@@ -101,6 +93,9 @@ let g:Tex_GotoError=1
 ab pymain if __name__=="__main__":
 ab teh the
 
+" Ctag settings
+set tags=./tags;
+
 " Taglist variables
 " Display function name in status bar:
 let g:ctags_statusline=1
@@ -113,10 +108,11 @@ nnoremap TT :TlistToggle<CR>
 map <F4> :TlistToggle<CR>
 " Various Taglist diplay config:
 let Tlist_Use_Right_Window = 1
-let Tlist_Compact_Format = 1
+" let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
+let Tlist_Show_One_File = 1
 
 " Tags search
 set tags+=tags;$HOME
