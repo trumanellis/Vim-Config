@@ -25,3 +25,6 @@
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = https://github.com/tsaleh/vim-tcomment.git
+[submodule "bundle/latex"]
+	path = bundle/latex
+	url = https://github.com/gerw/vim-latex-suite.git
