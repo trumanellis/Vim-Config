@@ -28,3 +28,6 @@
 [submodule "bundle/latex"]
 	path = bundle/latex
 	url = https://github.com/gerw/vim-latex-suite.git
+[submodule "bundle/fswitch"]
+	path = bundle/fswitch
+	url = https://github.com/ewiplayer/vim-fswitch.git
