@@ -1,11 +1,11 @@
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
-call pathogen#helptags()
+" call pathogen#helptags()
 
 " Source the vimrc file after saving it
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
+" if has("autocmd")
+"   autocmd bufwritepost .vimrc source $MYVIMRC
+" endif
 
 set nocompatible
 
@@ -54,8 +54,16 @@ set showmode
 set textwidth=80
 
 " FSwitch settings
-au! BufEnter *.C let b:fswitchdst = 'h' | let b:fswitchlocs = '../../include/systems,../../include/solvers,../../include/fe'
-au! BufEnter *.h let b:fswitchdst = 'C' | let b:fswitchlocs = '../../src/systems,../../src/solvers,../../src/fe'
+augroup mycppfiles
+  au!
+  au BufEnter *.h let b:fswitchdst  = 'C'
+  au BufEnter *.h let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/'
+augroup END
+augroup myheaderfiles
+  au!
+  au BufEnter *.C let b:fswitchdst  = 'h'
+  au BufEnter *.C let b:fswitchlocs = 'reg:/src/include/,reg:/src.*/include/'
+augroup END
 command! A :FSHere
 command! Al :FSRight
 command! AL :FSSplitRight
