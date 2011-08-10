@@ -31,3 +31,6 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/tsaleh/vim-matchit.git
+[submodule "bundle/fswitch"]
+	path = bundle/fswitch
+	url = https://github.com/ewiplayer/vim-fswitch.git
