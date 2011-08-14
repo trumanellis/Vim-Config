@@ -56,13 +56,17 @@ set textwidth=80
 " FSwitch settings
 augroup mycppfiles
   au!
-  au BufEnter *.h let b:fswitchdst  = 'C'
-  au BufEnter *.h let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/'
+  au BufEnter *.h let b:fswitchdst  = 'C,cpp'
+  au BufEnter *.hpp let b:fswitchdst  = 'cpp'
+  au BufEnter *.h let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/,./'
+  au BufEnter *.hpp let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/,./'
 augroup END
 augroup myheaderfiles
   au!
   au BufEnter *.C let b:fswitchdst  = 'h'
-  au BufEnter *.C let b:fswitchlocs = 'reg:/src/include/,reg:/src.*/include/'
+  au BufEnter *.cpp let b:fswitchdst  = 'hpp'
+  au BufEnter *.C let b:fswitchlocs = 'reg:/src/include/,reg:/src.*/include/,./'
+  au BufEnter *.cpp let b:fswitchlocs = 'reg:/src/include/,reg:/src.*/include/,./'
 augroup END
 command! A :FSHere
 command! Al :FSRight
@@ -135,3 +139,7 @@ function! GnuIndent()
   setlocal tabstop=8
 endfunction
 au FileType C,h call GnuIndent() 
+
+" Scons settings
+autocmd BufReadPre SConstruct set filetype=python
+autocmd BufReadPre SConscript set filetype=python
