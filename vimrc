@@ -107,6 +107,7 @@ ab teh the
 
 " Ctag settings
 set tags=./tags;
+set complete-=i
 
 " Taglist variables
 " Display function name in status bar:
