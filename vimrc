@@ -1,6 +1,6 @@
 source ~/.vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
-" call pathogen#helptags()
+call pathogen#helptags()
 
 " Source the vimrc file after saving it
 " if has("autocmd")
