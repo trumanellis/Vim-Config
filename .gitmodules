@@ -22,9 +22,6 @@
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = https://github.com/tsaleh/vim-tcomment.git
-[submodule "bundle/fswitch"]
-	path = bundle/fswitch
-	url = https://github.com/ewiplayer/vim-fswitch.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
