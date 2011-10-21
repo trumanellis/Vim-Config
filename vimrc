@@ -15,6 +15,12 @@ set nowrap
 set hlsearch 
 set incsearch
 
+" Remap hjkl to jkl;
+noremap ; l
+noremap l k
+noremap k j
+noremap j h
+
 " Colorscheme
 set t_Co=256
 colorscheme wombat256mod 
