@@ -19,18 +19,12 @@
 [submodule "bundle/taglist-plus"]
 	path = bundle/taglist-plus
 	url = https://github.com/int3/vim-taglist-plus.git
-[submodule "bundle/tcomment"]
-	path = bundle/tcomment
-	url = https://github.com/tsaleh/vim-tcomment.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/tsaleh/vim-supertab.git
-[submodule "bundle/fswitch"]
-	path = bundle/fswitch
-	url = https://github.com/vim-scripts/FSwitch.git
 [submodule "bundle/latex"]
 	path = bundle/latex
 	url = https://github.com/gerw/vim-latex-suite.git

@@ -22,8 +22,8 @@ set incsearch
 " noremap j h
 
 " Colorscheme
-set t_Co=256
-colorscheme wombat256mod 
+" set t_Co=256
+" colorscheme wombat256mod 
 
 " Set title
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
