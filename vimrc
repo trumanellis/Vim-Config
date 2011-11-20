@@ -70,7 +70,7 @@ augroup END
 augroup myheaderfiles
   au!
   au BufEnter *.C let b:fswitchdst  = 'h'
-  au BufEnter *.cpp let b:fswitchdst  = 'hpp'
+  au BufEnter *.cpp let b:fswitchdst  = 'hpp,h'
   au BufEnter *.C let b:fswitchlocs = 'reg:/src/include/,reg:/src.*/include/,./'
   au BufEnter *.cpp let b:fswitchlocs = 'reg:/src/include/,reg:/src.*/include/,./'
 augroup END
