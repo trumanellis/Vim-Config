@@ -14,6 +14,7 @@ filetype plugin indent on
 set nowrap
 set hlsearch 
 set incsearch
+set nospell
 
 " Remap hjkl to jkl;
 " noremap ; l
@@ -22,8 +23,8 @@ set incsearch
 " noremap j h
 
 " Colorscheme
-" set t_Co=256
-" colorscheme wombat256mod 
+set t_Co=256
+colorscheme wombat256mod 
 
 " Set title
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
@@ -57,7 +58,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 nnoremap <F12> :set invpaste paste?<CR>
 set pastetoggle=<F12>
 set showmode
-set textwidth=80
+set textwidth=78
 
 " FSwitch settings
 augroup mycppfiles
@@ -106,14 +107,33 @@ let g:tex_flavor='latex'
 let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_GotoError=1
+let g:Tex_ViewRule_pdf = 'evince'
 
 " Abbreviations
 ab pymain if __name__=="__main__":
 ab teh the
 
 " Ctag settings
-set tags=./tags;
-set complete-=i
+set tags+=./tags
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/trilinos
+set tags+=~/.vim/tags/camellia
+map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" set complete-=i
+
+" Omnicomplete settings
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp,*.h,*.C,*.cxx set omnifunc=omni#cpp#complete#Main
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
 
 " Taglist variables
 " Display function name in status bar:
@@ -150,3 +170,6 @@ au FileType C,h call GnuIndent()
 " Scons settings
 autocmd BufReadPre SConstruct set filetype=python
 autocmd BufReadPre SConscript set filetype=python
+
+" Read vtu files as xml
+au BufRead,BufNewFile *.vtu set filetype=xml
