@@ -29,6 +29,9 @@ colorscheme wombat256mod
 " Set title
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
+" Hide GVim menu
+set guioptions-=T
+
 " Search settings
 nnoremap <space> :noh<return><space>
 
