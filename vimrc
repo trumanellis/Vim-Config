@@ -31,8 +31,9 @@ set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servernam
 
 " GVim settings
 set guioptions-=m
-set guioptions-=T
 set mouse=c
+" Hide GVim menu
+set guioptions-=T
 
 " Search settings
 nnoremap <space> :noh<return><space>
