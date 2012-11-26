@@ -29,6 +29,11 @@ colorscheme wombat256mod
 " Set title
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
 
+" GVim settings
+set guioptions-=m
+set guioptions-=T
+set mouse=c
+
 " Search settings
 nnoremap <space> :noh<return><space>
 
@@ -61,19 +66,19 @@ set showmode
 set textwidth=78
 
 " FSwitch settings
+let b:fsnonewfiles = 'on'
 augroup mycppfiles
   au!
-  au BufEnter *.h let b:fswitchdst  = 'C,cpp'
-  au BufEnter *.hpp let b:fswitchdst  = 'cpp'
-  au BufEnter *.h let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/,./'
+  au BufEnter *.h let b:fswitchdst  = 'cpp'
+  " au BufEnter *.hpp let b:fswitchdst  = 'cpp'
+  " au BufEnter *.h let b:fswitchlocs = '../src/.*/'
   au BufEnter *.hpp let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/,./'
 augroup END
 augroup myheaderfiles
   au!
-  au BufEnter *.C let b:fswitchdst  = 'h'
-  au BufEnter *.cpp let b:fswitchdst  = 'hpp,h'
-  au BufEnter *.C let b:fswitchlocs = 'reg:/src/include/,reg:/src.*/include/,./'
-  au BufEnter *.cpp let b:fswitchlocs = 'reg:/src/include/,reg:/src.*/include/,./'
+  au BufEnter *.cpp let b:fswitchdst  = 'h'
+  " au BufEnter *.cpp let b:fswitchlocs = '../../include'
+  au BufEnter *.cpp let b:fswitchlocs = 'src/include,reg:/src/include/,reg:/src.*/include/,./'
 augroup END
 command! A :FSHere
 command! Al :FSRight
@@ -108,6 +113,7 @@ let g:Tex_CompileRule_dvi = 'latex -src-specials -interaction=nonstopmode $*'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_GotoError=1
 let g:Tex_ViewRule_pdf = 'evince'
+let g:Tex_MultipleCompileFormats = 'pdf'
 
 " Abbreviations
 ab pymain if __name__=="__main__":
