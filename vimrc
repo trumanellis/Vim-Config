@@ -56,6 +56,8 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 map <Left> <c-w>h
 map <Right> <c-w>l
+map <Up> <c-w>k
+map <Down> <c-w>j
 
 " Comment Settings
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
