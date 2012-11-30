@@ -22,6 +22,10 @@ set nospell
 " noremap k j
 " noremap j h
 
+set nobackup       "no backup files
+set nowritebackup  "only in case you don't want a backup file while editing
+set noswapfile     "no swap files
+
 " Colorscheme
 set t_Co=256
 colorscheme wombat256mod 
